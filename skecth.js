@@ -29,8 +29,15 @@ var laserY = 480
 var laserX = 400;
 
 // bullets is a list of [x,y] coordinates
-let bullets = []
+let bullets = [];
 
+// aliens is a list of [x,y,alive], where x,y are coordinates, and alive is a boolean value
+let aliens = [];
+for(let i = 4; i<=72; i+=4){
+    const x = 10*i;
+    aliens.push([x, 25, true]);
+    aliens.push([x, 75, true]);
+}
 
 var laserSpeed = 2;
 
@@ -46,9 +53,11 @@ function draw(){
 
 function drawScene(){
     // draw aliens
-    for(let i = 4; i<=72; i+=4){
-    image(img1,10*i,25,30,50);
-    image(img1,10*i,25*3,30,50);
+    for(let i = 0; i < aliens.length; i++){
+        const thisAlien = aliens[i];
+        if(thisAlien[2]){ // only if it's alive
+            image(img1, thisAlien[0], thisAlien[1], 30, 50);
+        }
    }
 
    //image draws spaceship
