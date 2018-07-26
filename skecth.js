@@ -45,9 +45,16 @@ function draw(){
 }
 
 function drawScene(){
+    // draw aliens
+    for(let i = 4; i<=72; i+=4){
+    image(img1,10*i,25,30,50);
+    image(img1,10*i,25*3,30,50);
+   }
+
+   //image draws spaceship
    image(img, shipX,500,75,75);
 
-   // draw the lasrr
+   // draw the laser
     stroke(0,255,0)
     strokeWeight(2);
     for(let i = 0; i < bullets.length; i++) {
@@ -55,12 +62,6 @@ function drawScene(){
         const laserY = bullets[i][1]+10;
         line(laserX, laserY, laserX, laserY-5);
     }
-
-   // draw aliens
-   for(let i = 4; i<=72; i+=4){
-    image(img1,10*i,25,30,50);
-    image(img1,10*i,25*3,30,50);
-   }
 }
 
 function nextStep(){
