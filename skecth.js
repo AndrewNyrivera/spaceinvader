@@ -67,8 +67,8 @@ function drawScene(){
     stroke(0,255,0)
     strokeWeight(2);
     for(let i = 0; i < bullets.length; i++) {
-        const laserX = bullets[i][0] + 37.5;
-        const laserY = bullets[i][1]+10;
+        const laserX = bullets[i][0];
+        const laserY = bullets[i][1];
         line(laserX, laserY, laserX, laserY-5);
     }
 }
@@ -95,7 +95,7 @@ function nextStep(){
    }
    // SPACE bar fires
    if(keyIsDown(32)){
-       let coordinates = [shipX, shipY];
+       let coordinates = [shipX+37.5, shipY+10];
        // .push adds to the end of an array
        bullets.push(coordinates);
    }
@@ -103,6 +103,27 @@ function nextStep(){
    for(let i = 0; i < bullets.length; i++){
        bullets[i][1] -= laserSpeed;
    }
+
+   // loop over each alien, and if it is alive, check if any bullet hit it, if so, set alive to false
+   // (hint: loop over the bullets, and check if the x,y of the bullet is inside the alien box)
+   for(let i = 0; i < aliens.length; i++) {
+       let thisAlien = aliens[i];
+       let alienX = thisAlien[0];
+       let alienY = thisAlien[1];
+       let alienWidth = 30;
+       let alienHeight = 50;
+       for(let j = 0; j < bullets.length; j++) {
+           let thisBullet = bullets[j];
+           let bulletX = thisBullet[0];
+           let bulletY = thisBullet[1];
+           const isInYRange = bulletY>alienY && bulletY<(alienY+alienHeight);
+           const isInXRange = bulletX>alienX && bulletX<(alienX+alienWidth);
+           const wasHit = isInYRange && isInXRange;
+           if(wasHit){
+               aliens[i][2] = false;
+           }
+       }
+    }
 }
 
 
