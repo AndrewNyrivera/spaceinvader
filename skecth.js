@@ -107,6 +107,7 @@ function nextStep(){
    // loop over each alien, and if it is alive, check if any bullet hit it, if so, set alive to false
    // (hint: loop over the bullets, and check if the x,y of the bullet is inside the alien box)
    for(let i = 0; i < aliens.length; i++) {
+       aliens[i][1] += 0.1;
        let thisAlien = aliens[i];
        let alienX = thisAlien[0];
        let alienY = thisAlien[1];
