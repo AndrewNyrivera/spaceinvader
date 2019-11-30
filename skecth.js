@@ -7,7 +7,7 @@ function preload() {
     //img of spaceship
     img = loadImage("https://raw.githubusercontent.com/AndrewNyrivera/spaceinvader/master/babyyoda.png");
     //Alien 1
-    img1 = loadImage("https://raw.githubusercontent.com/AndrewNyrivera/spaceinvader/master/stormtrooper.jpg");
+    img1 = loadImage("https://raw.githubusercontent.com/AndrewNyrivera/spaceinvader/master/alien1.png");
     //Don't forget about alien 2 and set up a server
 
     //explosion image
