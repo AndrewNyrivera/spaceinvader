@@ -5,9 +5,9 @@ var img1;
 function preload() {
     
     //img of spaceship
-    img = loadImage("https://cdn0.iconfinder.com/data/icons/video-games-ultra-color/60/050_-_Space_Invaders-512.png");
+    img = loadImage("https://raw.githubusercontent.com/AndrewNyrivera/spaceinvader/master/babyyoda.png");
     //Alien 1
-    img1 = loadImage("https://c1.staticflickr.com/3/2076/2527259678_cd753771e6_o.gif");
+    img1 = loadImage("https://raw.githubusercontent.com/AndrewNyrivera/spaceinvader/master/stormtrooper.jpg");
     //Don't forget about alien 2 and set up a server
 
     //explosion image
